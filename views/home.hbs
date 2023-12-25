@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+      body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin:
+      0; padding: 20px; } h1, h2 { color: #333; } ul { list-style-type: none;
+      padding: 0; } li { background-color: white; margin-bottom: 10px; padding:
+      10px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); } a {
+      text-decoration: none; color: #007bff; } a:hover { text-decoration:
+      underline; }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome, {{userEmail}}</h1>
+    <h2>Your Drones</h2>
+    <ul>
+      {{#each drones}}
+        <li>
+          <a href='my/drones/{{this.id}}'>{{this.droneModel}}</a>
+          - Serial Number:
+          {{this.serial_number}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <a href='/add-drone/{{userId}}'>I want add drone</a>
+  </body>
+</html>

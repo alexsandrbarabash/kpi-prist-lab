@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Drone Details</title>
+    <style>
+      body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin:
+      0; padding: 20px; display: flex; flex-direction: column; align-items:
+      center; } h1 { color: #333; margin-bottom: 20px; } h2, p {
+      background-color: white; padding: 10px; border-radius: 5px; box-shadow: 0
+      2px 4px rgba(0, 0, 0, 0.1); width: 300px; box-sizing: border-box;
+      margin-bottom: 10px; } a { display: inline-block; margin-top: 20px;
+      padding: 10px 15px; background-color: #007bff; color: white;
+      text-decoration: none; border-radius: 5px; transition: background-color
+      0.3s; } a:hover { background-color: #0056b3; }
+    </style>
+  </head>
+  <body>
+    <h1>Drone Details</h1>
+    <h2>Model: {{droneModel}}</h2>
+    <p><strong>Serial Number:</strong> {{serial_number}}</p>
+    <p><strong>Registered to User ID:</strong> {{user_id}}</p>
+
+    <!-- Розділ історії переміщень -->
+    <h2>Flight History</h2>
+    <div id='flight-history'>
+      {{#each history}}
+        <div class='flight-record'>
+          <p><strong>X:</strong> {{this.x}}</p>
+          <p><strong>Y:</strong> {{this.y}}</p>
+        </div>
+      {{/each}}
+    </div>
+
+    <a href='/home/{{user_id}}'>Back to Home</a>
+
+  </body>
+</html>
